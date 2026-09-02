@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="École des Adorateurs — Centre de Formation Missionnaire PROSKUNEO. École de transformation, d'intimité et de rencontre avec Jésus. Formation en louange et adoration au Cameroun." />
+    <meta name="keywords" content="école des adorateurs, PROSKUNEO, formation missionnaire, louange, adoration, Cameroun, chantres, conducteurs de louange" />
+    <meta property="og:title" content="École des Adorateurs — Centre PROSKUNEO" />
+    <meta property="og:description" content="Bâtir et équiper les adorateurs missionnaires. Formation de 4 mois — Sainteté, Profondeur, Puissance." />
+    <meta property="og:type" content="website" />
+    <meta name="theme-color" content="#E84C0E" />
+
+    <title>École des Adorateurs — Centre PROSKUNEO | Croisade QTRV</title>
+
+    <!-- Preconnect Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Shared Design System -->
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- Page-specific styles -->
+    <link rel="stylesheet" href="css/ecole.css" />
+
+    <!-- GSAP CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
+
+    <!-- Page JS -->
+    <script src="js/ecole.js" defer></script>
+</head>
+
+<body>
+
+    <!-- ═══════════════════════════════════════════════════════
+     MOBILE NAV OVERLAY
+═══════════════════════════════════════════════════════════ -->
+    <nav id="mobileNav" class="mobile-nav" role="navigation" aria-label="Menu mobile">
+        <button id="mobileNavClose" class="mobile-nav-close" aria-label="Fermer le menu">✕</button>
+        <a href="index.html">Accueil</a>
+        <a href="index.html#vision">Notre Vision</a>
+        <a href="index.html#piliers">Les Piliers</a>
+        <a href="#definition">L'École</a>
+        <a href="#missions">Nos Missions</a>
+        <a href="#formation">Formation</a>
+        <a href="magazine.html" style="color:var(--accent);font-weight:700;">📖 Magazine</a>
+        <a href="index.html#inscription" class="btn btn-primary" style="margin-top:16px">Rejoindre la Croisade</a>
+    </nav>
+
+    <!-- ═══════════════════════════════════════════════════════
+     NAVBAR
+═══════════════════════════════════════════════════════════ -->
+    <header id="navbar" class="navbar" role="banner">
+        <div class="container">
+            <div class="navbar-inner">
+
+                <!-- Logo -->
+                <a href="index.html" class="navbar-logo" aria-label="Retour à l'accueil — Croisade QTRV">
+                    <img src="images/13.jpg" alt="Logo Croisade Que Ton Règne Vienne" class="logo-img" onerror="this.style.display='none'" />
+                </a>
+
+                <!-- Desktop Nav -->
+                <nav class="navbar-nav" role="navigation" aria-label="Navigation principale">
+                    <a href="index.html">Accueil</a>
+                    <a href="index.html#vision">Vision</a>
+                    <a href="index.html#piliers">Piliers</a>
+                    <a href="#definition" class="ea-nav-active">L'École</a>
+                    <a href="#missions">Missions</a>
+                    <a href="#formation">Formation</a>
+                    <a href="magazine.html" style="color:var(--accent);font-weight:700;"><span class="badge-icon" aria-hidden="true"><i data-lucide="book-open"></i></span>Magazine</a>
+                </nav>
+
+                <!-- CTA -->
+                <a href="index.html#inscription" class="btn btn-primary navbar-cta" id="navCta">
+        S'inscrire
+        <span>→</span>
+      </a>
+
+                <!-- Hamburger -->
+                <button id="hamburger" class="hamburger" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+            </div>
+        </div>
+    </header>
+
+
+    <!-- ═══════════════════════════════════════════════════════
+     SECTION 1 — HERO
+═══════════════════════════════════════════════════════════ -->
+    <section class="hero ea-hero" id="accueil" aria-label="École des Adorateurs — Section principale">
+
+        <!-- Background -->
+        <div class="hero-bg" aria-hidden="true">
+            <img src="images/17.jpg" alt="Adorateur en prière les bras levés vers le ciel" loading="eager" />
+        </div>
+
+        <!-- Overlay dégradé spécifique -->
+        <div class="ea-hero-overlay" aria-hidden="true"></div>
+
+        <!-- Orbs décoratifs -->
+        <div class="hero-orb hero-orb-1" aria-hidden="true"></div>
+        <div class="hero-orb hero-orb-2" aria-hidden="true"></div>
+
+        <!-- Contenu -->
+        <div class="hero-content container">
+            <div class="hero-grid">
+
+                <!-- Gauche : Texte -->
+                <div class="hero-left">
+
+                    <div class="hero-badge">
+                        <span class="badge badge-white">
+            <span class="badge-icon" aria-hidden="true"><i data-lucide="music-2"></i></span>Centre de Formation Missionnaire — PROSKUNEO
+                        </span>
+                    </div>
+
+                    <p class="hero-slogan">Sainteté · Profondeur · Puissance</p>
+
+                    <h1 class="hero-title ea-hero-title">
+                        École des<br/>
+                        <span class="fire-word">Adorateurs</span>
+                    </h1>
+
+                    <p class="hero-desc">
+                        Une école de <strong>transformation</strong>, d'<strong>intimité</strong> et de rencontre avec notre intime Jésus. Bâtir et équiper les adorateurs missionnaires.
+                    </p>
+
+                    <div class="hero-btns">
+                        <a href="#formation" class="btn btn-primary" id="heroCta1">
+                            <span class="badge-icon" aria-hidden="true"><i data-lucide="hand-heart"></i></span>Découvrir la Formation
+                        </a>
+                        <a href="#definition" class="btn btn-outline" id="heroCta2">
+            En savoir plus
+          </a>
+                    </div>
+
+                    <!-- Info card -->
+                    <div class="hero-info-card">
+                        <div>
+                            <p class="hero-stat-label">Durée</p>
+                            <p class="hero-stat-value">4 Mois</p>
+                        </div>
+                        <div class="divider"></div>
+                        <div>
+                            <p class="hero-stat-label">Formation</p>
+                            <p class="hero-stat-value" style="font-size:13px;">Théorie + Pratique</p>
+                        </div>
+                        <div class="divider"></div>
+                        <div>
+                            <p class="hero-stat-label">Accès</p>
+                            <p class="hero-stat-value" style="font-size:13px;">Sous réservation</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Droite : Visual -->
+                <div class="hero-right" aria-hidden="true">
+                    <div class="hero-visual-wrap ea-visual-wrap">
+                        <!-- Rings décoratifs -->
+                        <div class="hero-ring hero-ring-1"></div>
+                        <div class="hero-ring hero-ring-2"></div>
+
+                        <!-- Centre PROSKUNEO card -->
+                        <div class="ea-proskuneo-card float-card">
+                            <div class="ea-proskuneo-logo"><i data-lucide="cross"></i></div>
+                            <p class="ea-proskuneo-name">PROSKUNEO</p>
+                            <p class="ea-proskuneo-sub">Centre de Formation Missionnaire</p>
+                        </div>
+
+                        <!-- Carte flottante 1 -->
+                        <div class="float-card hero-float-card-1">
+                            <div class="float-card-icon"><i data-lucide="music-2"></i></div>
+                            <p class="float-card-title">4 ans d'existence</p>
+                            <p class="float-card-sub">Adorateurs formés</p>
+                        </div>
+
+                        <!-- Carte flottante 2 -->
+                        <div class="float-card-dark hero-float-card-2">
+                            <div style="font-size:22px; margin-bottom:6px;" aria-hidden="true"><i data-lucide="flame"></i></div>
+                            <p style="font-size:13px; font-weight:700; color:var(--accent); margin-bottom:4px;">Formation</p>
+                            <p style="font-size:12px; color:rgba(255,255,255,0.65);">Sous réservation </p>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Wave de bas -->
+        <div class="hero-wave" aria-hidden="true">
+            <svg viewBox="0 0 1440 100" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+      <path d="M0,60 C240,120 480,0 720,60 C960,120 1200,0 1440,60 L1440,100 L0,100 Z"
+            fill="#ffffff" />
+    </svg>
+        </div>
+
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════════════════
+     SECTION 2 — QU'EST-CE QUE C'EST ?
+═══════════════════════════════════════════════════════════ -->
+    <section class="vision-section ea-definition-section" id="definition" aria-labelledby="definition-title">
+        <div class="container">
+            <div class="vision-grid">
+
+                <!-- Gauche : Image principale -->
+                <div class="vision-images reveal-left">
+                    <div class="vision-img-main ea-vision-img-main">
+                        <img src="images/29.jpg" alt=" Adorateur en prière profonde " loading="lazy " />
+                    </div>
+                    <div class="vision-img-secondary ">
+                        <img src="images/11.jpg" alt="Chœur de louange " loading="lazy " />
+                    </div>
+                    <div class="float-card vision-float-card ">
+                        <div class="float-card-icon "><i data-lucide="sparkles"></i></div>
+                        <p class="float-card-title ">Depuis 4 ans</p>
+                        <p class="float-card-sub ">Portes ouvertes, cœurs transformés</p>
+                    </div>
+                </div>
+
+                <!-- Droite : Texte -->
+                <div class="vision-right reveal-right ">
+
+                    <p class="section-tag ">Qu'est-ce que c'est ?</p>
+
+                    <h2 class="vision-title" id="definition-title">
+                        Une École de<br/>
+                        <span class="text-gradient">Transformation</span><br/> & d'Intimité
+                    </h2>
+
+                    <p class="vision-text ">
+                        L'<strong>École des Adorateurs</strong> est une école de transformation, d'intimité et de rencontre avec notre intime Jésus.
+                    </p>
+
+                    <blockquote class="vision-quote ">
+                        « Depuis 4 ans que ses portes furent ouvertes, elle a formé plusieurs adorateurs en son sein, équipés pour manifester l'adoration véritable. »
+                    </blockquote>
+
+                    <p class="vision-text ">
+                        Portée par le <strong>Centre de Formation Missionnaire PROSKUNEO</strong>, cette école répond à l'appel divin de former une génération d'adorateurs qui feront brûler le feu du réveil dans toutes les nations.
+                    </p>
+
+                    <!-- Carte d'info -->
+                    <div class="vision-info-card ">
+                        <div class="vision-info-icon "><i data-lucide="graduation-cap"></i></div>
+                        <div class="vision-info-text ">
+                            <strong>Notre Vision</strong>
+                            <span>Bâtir et équiper les adorateurs missionnaires</span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════════════════
+     SECTION 3 — NOS MISSIONS
+═══════════════════════════════════════════════════════════ -->
+    <section class="piliers-section ea-missions-section" id="missions" aria-labelledby="missions-title">
+        <div class="container">
+
+            <!-- En-tête -->
+            <div class="piliers-header reveal" style="margin-bottom:60px;">
+                <p class="section-tag">Nos Missions</p>
+                <h2 class="piliers-title" id="missions-title">
+                    Les 4 Piliers<br/>de Notre Mission
+                </h2>
+                <p class="piliers-subtitle ">
+                    Quatre axes d'action pour bâtir le royaume de Dieu par la louange et l'adoration.
+                </p>
+            </div>
+
+            <!-- 4 Cartes missions -->
+            <div class="ea-missions-grid piliers-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+
+                <article class="ea-mission-card pilier-card" tabindex="0" style="filter:none !important; backdrop-filter:none !important; -webkit-backdrop-filter:none !important; background:#ffffff !important; opacity:1 !important;">
+                    <div class="ea-mission-icon-wrap">
+                        <span class="ea-mission-icon"><i data-lucide="music-2"></i></span>
+                    </div>
+                    <div class="pilier-body">
+                        <p class="pilier-number">01 — Mission</p>
+                        <h3 class="pilier-name">Former les Chantres</h3>
+                        <p class="pilier-text">
+                            Former et équiper les chantres et les conducteurs de louange pour un ministère d'excellence selon le modèle divin.
+                        </p>
+                        <span class="pilier-cta">En savoir plus →</span>
+                    </div>
+                </article>
+
+                <article class="ea-mission-card pilier-card" tabindex="0" style="filter:none !important; backdrop-filter:none !important; -webkit-backdrop-filter:none !important; background:#ffffff !important; opacity:1 !important;">
+                    <div class="ea-mission-icon-wrap">
+                        <span class="ea-mission-icon"><i data-lucide="landmark"></i></span>
+                    </div>
+                    <div class="pilier-body">
+                        <p class="pilier-number">02 — Mission</p>
+                        <h3 class="pilier-name">Établir des Autels</h3>
+                        <p class="pilier-text">
+                            Établir des autels d'adoration dans les villes et villages, créant des foyers de présence divine à travers tout le Cameroun.
+                        </p>
+                        <span class="pilier-cta">En savoir plus →</span>
+                    </div>
+                </article>
+
+                <article class="ea-mission-card pilier-card" tabindex="0" style="filter:none !important; backdrop-filter:none !important; -webkit-backdrop-filter:none !important; background:#ffffff !important; opacity:1 !important;">
+                    <div class="ea-mission-icon-wrap">
+                        <span class="ea-mission-icon"><i data-lucide="hand-heart"></i></span>
+                    </div>
+                    <div class="pilier-body">
+                        <p class="pilier-number">03 — Mission</p>
+                        <h3 class="pilier-name">Restaurer le Ministère</h3>
+                        <p class="pilier-text">
+                            Travailler à restaurer le ministère de la louange et de l'adoration selon le modèle divin révélé dans les Écritures.
+                        </p>
+                        <span class="pilier-cta">En savoir plus →</span>
+                    </div>
+                </article>
+
+                <article class="ea-mission-card pilier-card" tabindex="0" style="filter:none !important; backdrop-filter:none !important; -webkit-backdrop-filter:none !important; background:#ffffff !important; opacity:1 !important;">
+                    <div class="ea-mission-icon-wrap">
+                        <span class="ea-mission-icon"><i data-lucide="flame"></i></span>
+                    </div>
+                    <div class="pilier-body">
+                        <p class="pilier-number">04 — Mission</p>
+                        <h3 class="pilier-name">Conserver le Feu</h3>
+                        <p class="pilier-text">
+                            Travailler à conserver le feu du réveil dans les églises par la louange et de l'adoration continuelle.
+                        </p>
+                        <span class="pilier-cta">En savoir plus →</span>
+                    </div>
+                </article>
+
+            </div>
+
+            <!-- Wave bottom -->
+            <div class="wave-divider " style="margin-top:80px; " aria-hidden="true ">
+                <svg viewBox="0 0 1440 80 " xmlns="http://www.w3.org/2000/svg " preserveAspectRatio="none ">
+      <path d="M0,40 C360,0 720,80 1080,40 C1260,20 1380,60 1440,40 L1440,0 L0,0 Z "
+            fill="var(--muted-bg) " />
+    </svg>
+            </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════════════════
+     SECTION 4 — DURÉE & FORMATION OFFERTE
+═══════════════════════════════════════════════════════════ -->
+    <section class="mission-section ea-formation-section" id="formation" aria-labelledby="formation-title">
+
+        <!-- Wave top -->
+        <div class="mission-wave-top" aria-hidden="true">
+            <svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+      <path d="M0,40 C360,0 720,80 1080,40 C1260,20 1380,60 1440,40 L1440,0 L0,0 Z "
+            fill="var(--muted-bg) " />
+    </svg>
+        </div>
+
+        <!-- BG image -->
+        <div class="ea-mission-bg mission-bg-img " aria-hidden="true ">
+            <img src="images/crowd.png " alt=" " loading="lazy " />
+        </div>
+
+        <!-- Orb déco -->
+        <div class="mission-orb " aria-hidden="true "></div>
+
+        <div class="container ">
+            <div class="mission-grid ea-formation-grid ">
+
+                <!-- Gauche : Durée & description -->
+                <div class="mission-left reveal-left ">
+
+                    <p class="section-tag " style="color:var(--accent); ">Programme</p>
+
+                    <h2 class="mission-title" id="formation-title">
+                        Formation de<br/>
+                        <span style="background:linear-gradient(135deg,var(--primary-light),var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">
+            4 Mois Intensifs
+          </span><br/>
+                    </h2>
+
+                    <p class="mission-text ">
+                        La formation est structurée en deux phases complémentaires pour une transformation complète de l'adorateur — de la théorie à la pratique.
+                    </p>
+
+                    <div class="mission-features ">
+
+                        <div class="mission-feature ">
+                            <div class="mission-feature-dot " style="background:var(--accent); "></div>
+                            <p class="mission-feature-text ">
+                                <strong style="color:white; ">2 mois de théorie</strong> — Fondements bibliques de la louange et de l'adoration.
+                            </p>
+                        </div>
+
+                        <div class="mission-feature ">
+                            <div class="mission-feature-dot "></div>
+                            <p class="mission-feature-text ">
+                                <strong style="color:white; ">2 mois de pratique</strong> — Application concrète et mise en service.
+                            </p>
+                        </div>
+
+                        <div class="mission-feature ">
+                            <div class="mission-feature-dot " style="background:var(--accent); "></div>
+                            <p class="mission-feature-text ">
+                                <strong style="color:white; ">Accompagnement</strong> — Suivi personnalisé par des mentors expérimentés
+                            </p>
+                        </div>
+
+                        <div class="mission-feature ">
+                            <div class="mission-feature-dot "></div>
+                            <p class="mission-feature-text ">
+                                <strong style="color:white; ">Contact</strong> — +237 693 333 408
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <a href="index.html#inscription" class="btn btn-accent">
+          Rejoindre l'École →
+        </a>
+
+                </div>
+
+                <!-- Droite : Modules de formation -->
+                <div class="mission-right ea-formation-right ">
+
+                    <div class="ea-formation-header reveal ">
+                        <p class="section-tag ">Modules enseignés</p>
+                        <h3 class="ea-formation-title ">Formation Offerte</h3>
+                    </div>
+
+                    <div class="ea-formation-list ">
+
+                        <div class="ea-formation-item reveal delay-100 ">
+                            <div class="ea-formation-num ">01</div>
+                            <div class="ea-formation-content ">
+                                <h4>Les origines de la louange et de l'adoration</h4>
+                                <p>Comprendre le fondement biblique et théologique de l'adoration depuis la création.</p>
+                            </div>
+                        </div>
+
+                        <div class="ea-formation-item reveal delay-200 ">
+                            <div class="ea-formation-num ">02</div>
+                            <div class="ea-formation-content ">
+                                <h4>La vie de l'adorateur</h4>
+                                <p>Vivre une vie consacrée, façonnée par l'intimité quotidienne avec Dieu.</p>
+                            </div>
+                        </div>
+
+                        <div class="ea-formation-item reveal delay-300 ">
+                            <div class="ea-formation-num ">03</div>
+                            <div class="ea-formation-content ">
+                                <h4>Le conducteur de louange</h4>
+                                <p>Former des leaders capables de conduire une assemblée dans la présence de Dieu.</p>
+                            </div>
+                        </div>
+
+                        <div class="ea-formation-item reveal delay-400 ">
+                            <div class="ea-formation-num ">04</div>
+                            <div class="ea-formation-content ">
+                                <h4>Louange, adoration & le Tabernacle</h4>
+                                <p>Quel rapport avec le tabernacle ? La structure prophétique de l'adoration révélée.</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════════════════
+     SECTION 5 — COMPTEURS
+═══════════════════════════════════════════════════════════ -->
+    <section class="counter-section" id="chiffres" aria-label="L 'école en chiffres">
+        <div class="container">
+
+
+        </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════════════════
+     SECTION 6 — CTA FINAL
+═══════════════════════════════════════════════════════════ -->
+    <section class="cta-section ea-cta-section" aria-label="Appel à rejoindre l'école">
+        <div class="container">
+            <div class="cta-inner">
+
+                <div class="cta-tag" aria-hidden="true">
+                    <span class="badge-icon" aria-hidden="true"><i data-lucide="cross"></i></span>Centre PROSKUNEO
+                </div>
+
+                <h2 class="cta-title">
+                    Rejoignez l'École<br/>des Adorateurs
+                </h2>
+
+                <p class="cta-text">
+                    Le Seigneur appelle une génération d'adorateurs missionnaires. Répondez à cet appel : sainteté, profondeur, puissance. Formation de 4 mois, sous réservation.
+
+                    <!-- Slogan -->
+                    <div class="ea-slogan-row" aria-hidden="true">
+                        <span>Sainteté</span>
+                        <span class="ea-slogan-dot">·</span>
+                        <span>Profondeur</span>
+                        <span class="ea-slogan-dot">·</span>
+                        <span>Puissance</span>
+                    </div>
+
+                    <div class="cta-btns">
+                        <a href="index.html#inscription" class="btn btn-white" id="ctaBtn1">
+          S'inscrire maintenant
+        </a>
+                        <a href="tel:+237693333408" class="btn btn-outline" id="ctaBtn2">
+                            <span class="badge-icon" aria-hidden="true"><i data-lucide="phone"></i></span>+237 693 333 408
+                        </a>
+                    </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════════════════════════ -->
+    <footer class="footer" role="contentinfo" aria-label="Pied de page">
+        <div class="container">
+
+            <div class="footer-grid">
+
+                <!-- Brand -->
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="images/logo.jpg" alt="Logo Croisade Que Ton Règne Vienne" class="footer-logo-img" onerror="this.style.display='none'" />
+                        <span class="footer-logo-name">Croisade QTRV</span>
+                    </div>
+                    <p class="footer-desc">
+                        Centre de Formation Missionnaire PROSKUNEO.<br/> Bâtir et équiper les adorateurs missionnaires pour le Cameroun Nouveau.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" class="social-link" aria-label="Facebook" title="Facebook">f</a>
+                        <a href="#" class="social-link" aria-label="Instagram" title="Instagram">in</a>
+                        <a href="#" class="social-link" aria-label="YouTube" title="YouTube">▶</a>
+                        <a href="#" class="social-link" aria-label="WhatsApp" title="WhatsApp">w</a>
+                    </div>
+                </div>
+
+                <!-- Navigation -->
+                <div>
+                    <p class="footer-col-title">L'École</p>
+                    <ul class="footer-links">
+                        <li><a href="#definition">Qu'est-ce que c'est ?</a></li>
+                        <li><a href="#missions">Nos Missions</a></li>
+                        <li><a href="#formation">La Formation</a></li>
+                        <li><a href="#chiffres">En Chiffres</a></li>
+                    </ul>
+                </div>
+
+                <!-- Site principal -->
+                <div>
+                    <p class="footer-col-title">Croisade QTRV</p>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="index.html#vision">Notre Vision</a></li>
+                        <li><a href="index.html#piliers">Les Piliers</a></li>
+                        <li><a href="index.html#mission">Notre Mission</a></li>
+                        <li><a href="index.html#inscription">S'inscrire</a></li>
+                        <li><a href="magazine.html" style="color:var(--accent);"><span class="badge-icon" aria-hidden="true"><i data-lucide="book-open"></i></span>Magazine</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <p class="footer-col-title">Contact</p>
+                    <ul class="footer-links">
+                        <li><a href="#"><span class="badge-icon" aria-hidden="true"><i data-lucide="map-pin"></i></span>Région de l'Ouest</a></li>
+                        <li><a href="#"><span class="badge-icon" aria-hidden="true"><i data-lucide="flag"></i></span>Cameroun</a></li>
+                        <li><a href="tel:+237693333408"><span class="badge-icon" aria-hidden="true"><i data-lucide="phone"></i></span>+237 693 333 408</a></li>
+                        <li><a href="mailto:contact@croisade-ctrv.cm"><span class="badge-icon" aria-hidden="true"><i data-lucide="mail"></i></span>contact@croisade-ctrv.cm</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Bottom bar -->
+            <div class="footer-bottom">
+                <p class="footer-copy">
+                    © - Croisade Que Ton Règne Vienne · École des Adorateurs PROSKUNEO. Tous droits réservés. Fait avec <span class="badge-icon" aria-hidden="true"><i data-lucide="heart"></i></span> pour la gloire de Dieu.
+                </p>
+                <div class="footer-bottom-links">
+                    <a href="#">Confidentialité</a>
+                    <a href="#">Mentions légales</a>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- Scroll to top -->
+    <button id="scrollTop" class="scroll-top" aria-label="Retour en haut">↑</button>
+
+</body>
+
+</html>

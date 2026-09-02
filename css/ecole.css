@@ -1,0 +1,611 @@
+/* ============================================================
+   ECOLE DES ADORATEURS — Styles spécifiques
+   Complète css/style.css (design system partagé)
+   Centre de Formation Missionnaire PROSKUNEO
+   ============================================================ */
+
+
+/* ─── SUPPRESSION GLOBALE DES EFFETS DE FLOU ────────────── */
+
+
+/* Annule tous les backdrop-filter hérités de style.css */
+
+.ea-hero .float-card,
+.ea-hero .float-card-dark,
+.ea-hero .hero-info-card,
+.ea-hero .btn-outline {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+}
+
+
+/* Navbar sans flou sur cette page */
+
+#navbar,
+#navbar.scrolled {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    top: 1cm !important;
+}
+
+#navbar.scrolled {
+    background: rgba(13, 10, 7, 0.97) !important;
+}
+
+.navbar-nav a {
+    color: rgba(255, 255, 255, 0.98) !important;
+    font-size: 0.95rem !important;
+    letter-spacing: 0.8px !important;
+}
+
+
+/* Mobile nav sans flou */
+
+.mobile-nav {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+}
+
+
+/* Float cards sans flou */
+
+.float-card {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    background: rgba(255, 255, 255, 0.97) !important;
+}
+
+.float-card-dark {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    background: rgba(26, 18, 8, 0.97) !important;
+}
+
+
+/* PROSKUNEO card sans flou */
+
+.ea-proskuneo-card {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    background: rgba(255, 255, 255, 0.98) !important;
+}
+
+
+/* Vision float card sans flou */
+
+.vision-float-card {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    background: rgba(255, 255, 255, 0.97) !important;
+}
+
+
+/* ─── NAVBAR ACTIVE LINK ─────────────────────────────────── */
+
+.ea-nav-active {
+    color: var(--accent) !important;
+}
+
+.ea-nav-active::after {
+    width: 100% !important;
+}
+
+
+/* ─── HERO OVERRIDES ─────────────────────────────────────── */
+
+.ea-hero .hero-bg::after {
+    background: linear-gradient( 135deg, rgba(13, 10, 7, 0.90) 0%, rgba(26, 12, 0, 0.82) 35%, rgba(13, 10, 7, 0.55) 65%, rgba(13, 10, 7, 0.75) 100%);
+}
+
+.ea-hero-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: radial-gradient(ellipse at 30% 60%, rgba(232, 76, 14, 0.18) 0%, transparent 60%), radial-gradient(ellipse at 80% 20%, rgba(245, 166, 35, 0.12) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+
+/* Hero title overrides for École */
+
+.ea-hero-title {
+    font-size: clamp(48px, 7vw, 88px) !important;
+}
+
+
+/* PROSKUNEO card centrale */
+
+.ea-proskuneo-card {
+    position: relative;
+    z-index: 5;
+    text-align: center;
+    padding: 28px 32px;
+    margin: 0 auto;
+    max-width: 280px;
+    border: 1px solid rgba(232, 76, 14, 0.3);
+    background: rgba(255, 255, 255, 0.94);
+}
+
+.ea-proskuneo-logo {
+    font-size: 36px;
+    margin-bottom: 8px;
+    color: var(--primary);
+}
+
+.ea-proskuneo-name {
+    font-size: 22px;
+    font-weight: 900;
+    color: var(--primary);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+}
+
+.ea-proskuneo-sub {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--text-light);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+
+/* Visual wrap for école hero (centred card instead of image) */
+
+.ea-visual-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    padding-top: 80px;
+}
+
+
+/* ─── DEFINITION SECTION ─────────────────────────────────── */
+
+.ea-definition-section {
+    padding: 120px 0 100px;
+}
+
+.ea-vision-img-main {
+    aspect-ratio: 3/4 !important;
+}
+
+.vision-img-main,
+.vision-img-secondary {
+    overflow: hidden;
+}
+
+.vision-img-main img,
+.vision-img-secondary img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+
+/* ─── MISSIONS SECTION ───────────────────────────────────── */
+
+.ea-missions-section {
+    background: var(--muted-bg);
+}
+
+.ea-missions-grid {
+    gap: 28px !important;
+}
+
+.ea-mission-card {
+    cursor: pointer;
+    border: none;
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    overflow: hidden;
+    transition: var(--transition);
+    padding: 0;
+    transform-style: preserve-3d;
+}
+
+.ea-mission-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg), 0 0 40px var(--glow-primary);
+}
+
+
+/* Mission card icon area */
+
+.ea-mission-icon-wrap {
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    position: relative;
+    overflow: hidden;
+}
+
+.ea-mission-icon-wrap::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 50% 50%, rgba(245, 166, 35, 0.25), transparent 70%);
+}
+
+.ea-mission-icon {
+    font-size: 42px;
+    position: relative;
+    z-index: 1;
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.3));
+}
+
+
+/* Mission card body inherits .pilier-body */
+
+.ea-mission-card .pilier-body {
+    padding: 28px;
+}
+
+.ea-mission-card .pilier-number {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--primary);
+    margin-bottom: 8px;
+}
+
+.ea-mission-card .pilier-name {
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--text-dark);
+    margin-bottom: 12px;
+    font-family: 'Playfair Display', serif;
+}
+
+.ea-mission-card .pilier-text {
+    font-size: 15px;
+    line-height: 1.75;
+    color: var(--text-mid);
+    margin-bottom: 16px;
+}
+
+.ea-mission-card .pilier-cta {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--primary);
+    letter-spacing: 0.5px;
+    transition: var(--transition-fast);
+    cursor: pointer;
+}
+
+.ea-mission-card:hover .pilier-cta {
+    color: var(--accent);
+}
+
+
+/* ─── FORMATION SECTION ──────────────────────────────────── */
+
+.ea-formation-section {
+    position: relative;
+    padding: 120px 0;
+    background: linear-gradient(135deg, var(--dark) 0%, var(--dark-2) 50%, var(--dark-3) 100%);
+    overflow: hidden;
+}
+
+.ea-mission-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+
+.ea-mission-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.08;
+}
+
+.ea-formation-section .container {
+    position: relative;
+    z-index: 2;
+}
+
+.ea-formation-grid {
+    gap: 80px;
+    align-items: flex-start;
+}
+
+
+/* Droite : liste de formation */
+
+.ea-formation-right {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: var(--radius-xl);
+    padding: 40px;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+}
+
+.ea-formation-header {
+    margin-bottom: 32px;
+}
+
+.ea-formation-title {
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--white);
+    font-family: 'Playfair Display', serif;
+    margin-top: 8px;
+}
+
+
+/* Formation items */
+
+.ea-formation-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.ea-formation-item {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.ea-formation-item:last-child {
+    border-bottom: none;
+}
+
+.ea-formation-item:hover {
+    padding-left: 8px;
+}
+
+.ea-formation-num {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 800;
+    color: var(--white);
+    margin-top: 2px;
+    box-shadow: 0 4px 16px var(--glow-primary);
+}
+
+.ea-formation-content h4 {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 6px;
+    line-height: 1.3;
+}
+
+.ea-formation-content p {
+    font-size: 13px;
+    line-height: 1.65;
+    color: rgba(255, 255, 255, 0.55);
+}
+
+
+/* Hover on formation item */
+
+.ea-formation-item:hover .ea-formation-num {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 8px 24px var(--glow-primary);
+}
+
+.ea-formation-item:hover .ea-formation-content h4 {
+    color: var(--accent);
+}
+
+.ea-formation-item,
+.ea-formation-item *,
+.ea-formation-content,
+.ea-formation-content * {
+    filter: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    opacity: 1 !important;
+    background: transparent !important;
+    background-image: none !important;
+}
+
+
+/* ─── STAT CARDS ─────────────────────────────────────────── */
+
+.ea-stat-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-lg);
+    padding: 28px;
+    transition: var(--transition);
+    transform-style: preserve-3d;
+}
+
+.ea-stat-card:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(232, 76, 14, 0.3);
+    transform: translateY(-6px);
+}
+
+
+/* ─── CTA SECTION (École) ─────────────────────────────────── */
+
+.ea-cta-section {
+    background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 40%, var(--accent) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.ea-cta-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+.ea-cta-section .cta-inner {
+    position: relative;
+    z-index: 1;
+}
+
+
+/* Slogan PROSKUNEO */
+
+.ea-slogan-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin: 24px 0 32px;
+    font-size: 18px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.85);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.ea-slogan-dot {
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 24px;
+}
+
+
+/* ─── SCROLL TOP BUTTON ──────────────────────────────────── */
+
+.scroll-top {
+    position: fixed;
+    bottom: 32px;
+    right: 32px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    color: white;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 0 4px 20px var(--glow-primary);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(16px);
+    transition: var(--transition);
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.scroll-top.visible {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+.scroll-top:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 32px var(--glow-primary);
+}
+
+
+/* ─── RESPONSIVE ─────────────────────────────────────────── */
+
+@media (max-width: 1024px) {
+    .ea-formation-grid {
+        grid-template-columns: 1fr !important;
+        gap: 48px !important;
+    }
+    .ea-formation-right {
+        padding: 28px;
+    }
+}
+
+@media (max-width: 768px) {
+    .ea-missions-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+    }
+    .ea-hero-title {
+        font-size: clamp(38px, 10vw, 56px) !important;
+    }
+    .ea-proskuneo-card {
+        max-width: 240px;
+    }
+    .ea-slogan-row {
+        font-size: 13px;
+        gap: 10px;
+        letter-spacing: 1.5px;
+    }
+    .ea-visual-wrap {
+        display: none;
+    }
+    .ea-formation-item {
+        flex-direction: column;
+        gap: 12px;
+    }
+}
+
+
+/* Override complet pour supprimer le flou sur les cartes de mission */
+
+.ea-mission-card,
+.ea-mission-card *,
+.pilier-card,
+.pilier-card *,
+.counter-item,
+.counter-item *,
+.ea-formation-right,
+.ea-formation-right *,
+.ea-stat-card,
+.ea-stat-card * {
+    filter: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    opacity: 1 !important;
+    background-image: none !important;
+}
+
+.ea-mission-card,
+.pilier-card {
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    border: 1px solid rgba(0, 0, 0, 0.08) !important;
+}
+
+.ea-mission-card,
+.ea-mission-card::before,
+.ea-mission-card::after,
+.pilier-card,
+.pilier-card::before,
+.pilier-card::after {
+    filter: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+}
+
+.ea-mission-card,
+.pilier-card {
+    background: #ffffff !important;
+}
+
+@media (max-width: 480px) {
+    .ea-formation-right {
+        padding: 20px;
+    }
+    .ea-formation-num {
+        width: 36px;
+        height: 36px;
+    }
+}

@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Magazine Croisade Que Ton Règne Vienne — Un Voyage en Arrière. IYOM, contexte, vision, objectifs et résultats attendus de la croisade de louange et d'adoration au Cameroun." />
+    <meta name="keywords" content="magazine, croisade, IYOM, louange, adoration, Cameroun, Bafoussam, que ton règne vienne" />
+    <meta property="og:title" content="Magazine — Croisade Que Ton Règne Vienne" />
+    <meta property="og:description" content="Un voyage en arrière : IYOM, vision, objectifs et résultats attendus de la Croisade Que Ton Règne Vienne." />
+    <meta property="og:type" content="website" />
+    <meta name="theme-color" content="#E84C0E" />
+
+    <title>Magazine — Un Voyage en Arrière | Croisade QTRV</title>
+
+    <!-- Preconnect Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Shared Design System -->
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- Page-specific styles -->
+    <link rel="stylesheet" href="css/magazine.css" />
+    <link rel="stylesheet" href="css/magazine-overrides.css" />
+    <style>
+        /* Désactiver le flou sur les cards 3 et 4 */
+        
+        .mag-objectifs-grid .mag-objectif-card:nth-child(3),
+        .mag-objectifs-grid .mag-objectif-card:nth-child(4) {
+            filter: none !important;
+        }
+    </style>
+
+    <!-- GSAP CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
+
+    <!-- Page JS -->
+    <script src="js/magazine.js" defer></script>
+</head>
+
+<body>
+
+    <!-- ═══════════════════════════════════════════════════════
+     MOBILE NAV OVERLAY
+═══════════════════════════════════════════════════════════ -->
+    <nav id="mobileNav" class="mobile-nav" role="navigation" aria-label="Menu mobile">
+        <button id="mobileNavClose" class="mobile-nav-close" aria-label="Fermer le menu">✕</button>
+        <a href="index.html">Accueil</a>
+        <a href="index.html#vision">Notre Vision</a>
+        <a href="ecole-des-adorateurs.html"><span class="badge-icon" aria-hidden="true"><i data-lucide="music-2"></i></span>École des Adorateurs</a>
+        <a href="#soif">Une Soif</a>
+        <a href="#contexte">Contexte & Vision</a>
+        <a href="#preparation">Préparation</a>
+        <a href="#resultats">Résultats Attendus</a>
+        <a href="index.html#inscription" class="btn btn-primary" style="margin-top:16px">Rejoindre la Croisade</a>
+    </nav>
+
+    <!-- ═══════════════════════════════════════════════════════
+     NAVBAR
+═══════════════════════════════════════════════════════════ -->
+    <header id="navbar" class="navbar" role="banner">
+        <div class="container">
+            <div class="navbar-inner">
+
+                <!-- Logo -->
+                <a href="index.html" class="navbar-logo" aria-label="Retour à l'accueil — Croisade QTRV">
+                    <img src="images/14.jpg" alt="Logo Croisade Que Ton Règne Vienne" class="logo-img" onerror="this.style.display='none'" />
+                </a>
+
+                <!-- Desktop Nav -->
+                <nav class="navbar-nav" role="navigation" aria-label="Navigation principale">
+                    <a href="index.html">Accueil</a>
+                    <a href="index.html#vision">Vision</a>
+                    <a href="ecole-des-adorateurs.html"><span class="badge-icon" aria-hidden="true"><i data-lucide="music-2"></i></span>École</a>
+                    <a href="#soif" class="mag-nav-active"><span class="badge-icon" aria-hidden="true"><i data-lucide="book-open"></i></span>Magazine</a>
+                    <a href="#resultats">Résultats</a>
+                    <a href="index.html#inscription">Contact</a>
+                </nav>
+
+                <!-- CTA -->
+                <a href="index.html#inscription" class="btn btn-primary navbar-cta" id="navCta">
+        S'inscrire
+        <span>→</span>
+      </a>
+
+                <!-- Hamburger -->
+                <button id="hamburger" class="hamburger" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+            </div>
+        </div>
+    </header>
+
+
+    <!-- ═══════════════════════════════════════════════════════
+     SECTION 1 — HERO
+═══════════════════════════════════════════════════════════ -->
+    <section class="hero mag-hero" id="accueil" aria-label="Magazine — Section principale">
+
+        <!-- Background -->
+        <div class="hero-bg" aria-hidden="true">
+            <img src="images/30.jpg" alt="Foule en louange et adoration" loading="eager" />
+        </div>
+
+        <!-- Orbs décoratifs -->
+        <div class="hero-orb hero-orb-1" aria-hidden="true"></div>
+        <div class="hero-orb hero-orb-2" aria-hidden="true"></div>
+
+        <!-- Contenu -->
+        <div class="hero-content container">
+            <div class="hero-grid">
+
+                <!-- Gauche : Texte -->
+                <div class="hero-left">
+
+                    <div class="hero-badge">
+                        <span class="badge badge-white">
+            <span class="badge-icon" aria-hidden="true"><i data-lucide="book-open"></i></span>Magazine — Édition 2026
+                        </span>
+                    </div>
+
+                    <p class="hero-slogan">Jésus au centre de notre adoration</p>
+
+                    <h1 class="hero-title">
+                        Un Voyage<br/> en <span class="fire-word">Arrière</span>
+                    </h1>
+
+                    <p class="hero-desc">
+                        Retour sur la vision, le contexte et les résultats attendus de la
+                        <strong>Croisade Que Ton Règne Vienne</strong> — portée par IYM, International Youth Ministry. Jean 4 : 23-24.
+                    </p>
+
+                    <div class="hero-btns">
+                        <a href="#soif" class="btn btn-primary" id="heroCta1">
+                            <span class="badge-icon" aria-hidden="true"><i data-lucide="flame"></i></span>Découvrir le Magazine
+                        </a>
+                        <a href="#resultats" class="btn btn-outline" id="heroCta2">
+            Résultats attendus
+          </a>
+                    </div>
+
+                    <a href="#soif" class="btn btn-accent mag-cover-cta">
+                        JESUS AU CENTRE DE NOTRE ADORATION
+                    </a>
+
+                    <!-- Info card -->
+                    <div class="hero-info-card">
+                        <div>
+                            <p class="hero-stat-label">Dates</p>
+                            <p class="hero-stat-value" style="font-size:16px;">17–20 Déc. 2026</p>
+                        </div>
+                        <div class="divider"></div>
+                        <div>
+                            <p class="hero-stat-label">Lieu</p>
+                            <p class="hero-stat-value">Bafoussam</p>
+                        </div>
+                        <div class="divider"></div>
+                        <div>
+                            <p class="hero-stat-label">Cible</p>
+                            <p class="hero-stat-value" style="font-size:14px;">1500 Personnes</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Droite : Visual -->
+                <div class="hero-right" aria-hidden="true">
+                    <div class="hero-visual-wrap">
+                        <!-- Rings décoratifs -->
+                        <div class="hero-ring hero-ring-1"></div>
+                        <div class="hero-ring hero-ring-2"></div>
+
+                        <!-- Image principale -->
+                        <div class="hero-visual-img">
+                            <img src="images/25.jpg" alt="Foule en adoration" />
+                        </div>
+
+                        <!-- Carte flottante 1 -->
+                        <div class="float-card hero-float-card-1">
+                            <div class="float-card-icon"><i data-lucide="cross"></i></div>
+                            <p class="float-card-title">IYM</p>
+                            <p class="float-card-sub">International Youth Ministry</p>
+                        </div>
+
+                        <!-- Carte flottante 2 -->
+                        <div class="float-card-dark hero-float-card-2">
+                            <div style="font-size:22px; margin-bottom:6px;" aria-hidden="true"><i data-lucide="sparkles"></i></div>
+                            <p style="font-size:13px; font-weight:700; color:var(--accent); margin-bottom:4px;">Continuons</p>
+                            <p style="font-size:12px; color:rgba(255,255,255,0.65);">le Voyage…</p>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Wave de bas -->
+        <div class="hero-wave" aria-hidden="true">
+            <svg viewBox="0 0 1440 100" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+      <path d="M0,60 C240,120 480,0 720,60 C960,120 1200,0 1440,60 L1440,100 L0,100 Z"
+            fill="#ffffff" />
+    </svg>
+        </div>
+
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════════════════
+     SECTION 2 — PLUS QU'UNE VISION, UNE SOIF (IYOM)
+═══════════════════════════════════════════════════════════ -->
+    <section class="vision-section" id="soif" aria-labelledby="soif-title">
+        <div class="container">
+            <div class="vision-grid">
+
+                <!-- Gauche : Images empilées -->
+                <div class="vision-images reveal-left">
+                    <div class="vision-img-main">
+                        <img src="images/32.jpg" alt="Évangéliste Brice Simen en prière" loading="lazy" />
+                    </div>
+                    <div class="vision-img-secondary">
+                        <img src="images/33.jpg" alt="Assemblée en louange" loading="lazy" />
+                    </div>
+                    <div class="float-card vision-float-card">
+                        <div class="float-card-icon"><i data-lucide="cross"></i></div>
+                        <p class="float-card-title">Fondée en 2022</p>
+                        <p class="float-card-sub">Reconnue le 23 juin 2023</p>
+                    </div>
+                </div>
+
+                <!-- Droite : Texte -->
+                <div class="vision-right reveal-right">
+
+                    <p class="section-tag">Plus qu'une vision</p>
+
+                    <h2 class="vision-title" id="soif-title">
+                        Une <span class="text-gradient">Soif</span><br/> Ardente de Dieu
+                    </h2>
+
+                    <p class="vision-text">
+                        <strong>IYM</strong> (International Youth Ministry) est une association artistique chrétienne à but non lucratif et apolitique. C'est un mouvement de jeunes dynamiques travaillant à ressembler à Christ au travers de l'art dans
+                        le monde entier.
+                    </p>
+
+                    <p class="vision-text">
+                        Fondée depuis 2022 et officiellement reconnue par l'État comme association le
+                        <strong>23 juin 2023</strong>, elle a ouvert ses portes au public et aux enfants de Dieu par ses différentes activités. L'association est basée au Cameroun.
+                    </p>
+
+                    <!-- Valeurs -->
+                    <div class="mag-values-row">
+                        <span class="mag-value-chip"><i data-lucide="wind" class="badge-icon"></i>Sainteté</span>
+                        <span class="mag-value-chip"><i data-lucide="droplets" class="badge-icon"></i>Profondeur</span>
+                        <span class="mag-value-chip"><i data-lucide="flame" class="badge-icon"></i>Puissance</span>
+                    </div>
+
+                    <blockquote class="vision-quote" style="margin-top:24px;">
+                        « Un mouvement de jeunes dynamiques travaillant à ressembler à Christ au travers de l'art dans le monde entier. »
+                    </blockquote>
+                    <div class="mag-quote-author">
+                        <span class="mag-quote-author-name">Évangéliste Brice Simen</span>
+                        <span class="mag-quote-author-role">Fondateur IYM</span>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════════════════
+     SECTION 3 — CONTEXTE, VISION & OBJECTIFS
+═══════════════════════════════════════════════════════════ -->
+    <section class="piliers-section" id="contexte" aria-labelledby="contexte-title">
+        <div class="container">
+
+            <!-- En-tête -->
+            <div class="piliers-header reveal">
+                <p class="section-tag">Contexte de Justification</p>
+                <h2 class="piliers-title" id="contexte-title">
+                    Notre Vision<br/>& Nos Objectifs
+                </h2>
+                <p class="piliers-subtitle">
+                    Dans un contexte prophétique où le Cameroun est une nation de réveil pour les autres nations, la région de l'Ouest est d'un rôle capital et indispensable.
+                </p>
+            </div>
+
+            <blockquote class="vision-quote reveal" style="max-width:820px; margin:0 auto 20px;">
+                Terre de louange et d'adoration, le Seigneur nous convie à prendre conscience car c'est le temps de vivre et de manifester l'adoration véritable. C'est dans cette optique que nous, les jeunes venus de tout horizon, acceptons d'être utilisés par Dieu afin
+                d'apporter notre pierre de construction pour le Cameroun Nouveau au travers des Croisades Que Ton Règne Vienne.
+            </blockquote>
+
+            <div class="vision-info-card reveal" style="max-width:820px; margin:0 auto 8px;">
+                <div class="vision-info-icon">🎯</div>
+                <div class="vision-info-text">
+                    <strong>Vision</strong>
+                    <span>Établir le règne de Dieu dans le cœur des jeunes en particulier et le monde en général par la louange et l'adoration.</span>
+                </div>
+            </div>
+
+            <!-- Objectifs -->
+            <div class="mag-objectifs-grid">
+
+                <div class="mag-objectif-card">
+                    <div class="mag-objectif-num">01</div>
+                    <p class="mag-objectif-text">Provoquer un réveil par la louange et l'adoration.</p>
+                </div>
+
+                <div class="mag-objectif-card">
+                    <div class="mag-objectif-num">02</div>
+                    <p class="mag-objectif-text">Susciter une armée d'adorateurs.</p>
+                </div>
+
+                <div class="mag-objectif-card">
+                    <div class="mag-objectif-num">03</div>
+                    <p class="mag-objectif-text">Établir des autels d'adoration dans les villes et villages.</p>
+                </div>
+
+                <div class="mag-objectif-card">
+                    <div class="mag-objectif-num">04</div>
+                    <p class="mag-objectif-text">Répandre une atmosphère de louange et d'adoration.</p>
+                </div>
+
+            </div>
+
+            <!-- Cible -->
+            <div class="vision-info-card reveal mag-cible-card" style="max-width:820px; margin:2cm auto 0; background:linear-gradient(135deg, var(--primary-dark), var(--primary));">
+                <div class="vision-info-icon" style="background:var(--white);">📣</div>
+                <div class="vision-info-text">
+                    <strong>Cible</strong>
+                    <span>Les jeunes et toute personne désireuse de voir sa vie transformée — mobiliser 1500 personnes minimum.</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════════════════
+     SECTION 4 — ACTIVITÉS PRÉPARATOIRES & RESSOURCES
+═══════════════════════════════════════════════════════════ -->
+    <section class="mission-section" id="preparation" aria-labelledby="preparation-title">
+
+        <!-- BG image -->
+        <div class="mission-bg-img" aria-hidden="true">
+            <img src="images/cameroon.png" alt="" loading="lazy" />
+        </div>
+
+        <!-- Orb déco -->
+        <div class="mission-orb" aria-hidden="true"></div>
+
+        <div class="container">
+            <div class="mission-grid">
+
+                <!-- Gauche : Activités préparatoires -->
+                <div class="mission-left reveal-left">
+
+                    <p class="section-tag" style="color:var(--accent);">Activités Préparatoires</p>
+
+                    <h2 class="mission-title" id="preparation-title">
+                        Un Voyage de<br/>
+                        <span style="background:linear-gradient(135deg,var(--primary-light),var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">
+            Préparation Spirituelle
+          </span>
+                    </h2>
+
+                    <p class="mission-text">
+                        Une série d'activités préparatoires pour mobiliser, consacrer et unir le corps de Christ avant la croisade.
+                    </p>
+
+                    <div class="mag-activities-badge">
+                        <span>Activités<br/>Préparatoires</span>
+                    </div>
+
+                    <div class="mag-timeline">
+                        <div class="mag-timeline-item timeline-blue">
+                            <p class="mag-timeline-text">24h de louange non-stop</p>
+                        </div>
+                        <div class="mag-timeline-item timeline-orange">
+                            <p class="mag-timeline-text">Tournois de football</p>
+                        </div>
+                        <div class="mag-timeline-item timeline-blue">
+                            <p class="mag-timeline-text">Worship Sunday</p>
+                        </div>
+                        <div class="mag-timeline-item timeline-pink">
+                            <p class="mag-timeline-text">Nuits de louange</p>
+                        </div>
+                        <div class="mag-timeline-item timeline-red">
+                            <p class="mag-timeline-text">Caravanes</p>
+                        </div>
+                        <div class="mag-timeline-item timeline-orange-light">
+                            <p class="mag-timeline-text">Actions sociales</p>
+                        </div>
+                        <div class="mag-timeline-item timeline-blue-light">
+                            <p class="mag-timeline-text">Retraites spirituelles</p>
+                        </div>
+                        <div class="mag-timeline-item timeline-green">
+                            <p class="mag-timeline-text">Jeûne et prière</p>
+                        </div>
+                        <div class="mag-timeline-item timeline-yellow">
+                            <p class="mag-timeline-text">Challenge Ma Ville, Ma Prophétie</p>
+                        </div>
+                    </div>
+
+                    <a href="index.html#inscription" class="btn btn-accent">
+          Rejoindre la Croisade →
+        </a>
+
+                </div>
+
+                <!-- Droite : Stratégie & Ressources -->
+                <div class="mission-right">
+
+                    <div class="mag-resources-card reveal-right">
+                        <p class="mag-resources-title"><span class="badge-icon" aria-hidden="true"><i data-lucide="radio"></i></span>Stratégie de mobilisation</p>
+                        <p class="mag-resources-detail">Communication numérique, communication presse-radio et télévision, communication print...</p>
+
+                        <p class="mag-resources-title"><span class="badge-icon" aria-hidden="true"><i data-lucide="users"></i></span>Ressources humaines</p>
+                        <div class="mag-resources-list">
+                            <span class="mag-resources-tag">Logistique</span>
+                            <span class="mag-resources-tag">Médias</span>
+                            <span class="mag-resources-tag">Louange</span>
+                            <span class="mag-resources-tag">Communication</span>
+                            <span class="mag-resources-tag">Sécurité</span>
+                            <span class="mag-resources-tag">Intercession</span>
+                            <span class="mag-resources-tag">Équipe médicale</span>
+                            <span class="mag-resources-tag">Gastronomie</span>
+                            <span class="mag-resources-tag">Mobilisation</span>
+                        </div>
+
+                        <p class="mag-resources-title"><span class="badge-icon" aria-hidden="true"><i data-lucide="wrench"></i></span>Ressources matérielles & financières</p>
+                        <div class="mag-resources-list">
+                            <span class="mag-resources-tag">Sonorisation</span>
+                            <span class="mag-resources-tag">Podium</span>
+                            <span class="mag-resources-tag">Décoration</span>
+                            <span class="mag-resources-tag">Communication</span>
+                            <span class="mag-resources-tag">Transport</span>
+                            <span class="mag-resources-tag">Sécurité</span>
+                            <span class="mag-resources-tag">Assistance médicale</span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- ═══════════════════════════════════════════════════════
+     SECTION 6 — INFORMATIONS GÉNÉRALES
+═══════════════════════════════════════════════════════════ -->
+    <section class="inscription-section" aria-label="Informations générales">
+        <div class="container">
+
+            <div class="piliers-header reveal" style="margin-bottom:48px;">
+                <p class="section-tag">Appel à la Participation</p>
+                <h2 class="piliers-title">Informations Générales</h2>
+                <p class="piliers-subtitle">
+                    Toutes personnes désireuses de voir le règne de Dieu être établi peuvent prendre part au partenariat.
+                </p>
+            </div>
+
+            <div class="mag-infos-grid">
+
+                <div class="mag-info-card reveal delay-100">
+                    <span class="mag-info-emoji" aria-hidden="true"><i data-lucide="calendar-days"></i></span>
+                    <p class="mag-info-label">Date officielle</p>
+                    <p class="mag-info-value">17 au 20 Déc. 2026</p>
+                </div>
+
+                <div class="mag-info-card reveal delay-200">
+                    <span class="mag-info-emoji" aria-hidden="true"><i data-lucide="map-pin"></i></span>
+                    <p class="mag-info-label">Lieu</p>
+                    <p class="mag-info-value">Bafoussam</p>
+                </div>
+
+                <div class="mag-info-card reveal delay-300">
+                    <span class="mag-info-emoji" aria-hidden="true"><i data-lucide="sun"></i></span>
+                    <p class="mag-info-label">Déroulement</p>
+                    <p class="mag-info-value">Session du matin et du soir</p>
+                </div>
+
+                <div class="mag-info-card reveal delay-400">
+                    <span class="mag-info-emoji" aria-hidden="true"><i data-lucide="phone"></i></span>
+                    <p class="mag-info-label">Contact</p>
+                    <p class="mag-info-value"><a href="tel:+237693333408">693 333 408</a></p>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════════════════
+     SECTION 7 — CTA FINAL
+═══════════════════════════════════════════════════════════ -->
+    <section class="cta-section" aria-label="Continuons le voyage">
+        <div class="container">
+            <div class="cta-inner">
+
+                <div class="cta-tag" aria-hidden="true">
+                    <span class="badge-icon" aria-hidden="true"><i data-lucide="wind"></i></span>Un Voyage en Arrière
+                </div>
+
+                <h2 class="cta-title">
+                    Continuons<br/>le Voyage…
+                </h2>
+
+                <p class="cta-text">
+                    Le Seigneur appelle la jeunesse du Cameroun à se lever, à louer, à adorer, et à construire ensemble le Cameroun Nouveau. Soyez au rendez-vous !
+                </p>
+
+                <div class="cta-btns">
+                    <a href="index.html#inscription" class="btn btn-white" id="ctaBtn1">
+          S'inscrire maintenant
+        </a>
+                    <a href="ecole-des-adorateurs.html" class="btn btn-outline" id="ctaBtn2">
+                        <span class="badge-icon" aria-hidden="true"><i data-lucide="music-2"></i></span>École des Adorateurs
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════════════════════════ -->
+    <footer class="footer" role="contentinfo" aria-label="Pied de page">
+        <div class="container">
+
+            <div class="footer-grid">
+
+                <!-- Brand -->
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="images/logo.jpg" alt="Logo Croisade Que Ton Règne Vienne" class="footer-logo-img" onerror="this.style.display='none'" />
+                        <span class="footer-logo-name">Croisade QTRV</span>
+                    </div>
+                    <p class="footer-desc">
+                        Magazine — Un Voyage en Arrière.<br/> IYM · International Youth Ministry. Jésus au centre de l'adoration.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" class="social-link" aria-label="Facebook" title="Facebook">f</a>
+                        <a href="#" class="social-link" aria-label="Instagram" title="Instagram">in</a>
+                        <a href="#" class="social-link" aria-label="YouTube" title="YouTube">▶</a>
+                        <a href="#" class="social-link" aria-label="WhatsApp" title="WhatsApp">w</a>
+                    </div>
+                </div>
+
+                <!-- Navigation -->
+                <div>
+                    <p class="footer-col-title">Magazine</p>
+                    <ul class="footer-links">
+                        <li><a href="#soif">Une Soif</a></li>
+                        <li><a href="#contexte">Contexte & Vision</a></li>
+                        <li><a href="#preparation">Préparation</a></li>
+                        <li><a href="#resultats">Résultats Attendus</a></li>
+                    </ul>
+                </div>
+
+                <!-- Site principal -->
+                <div>
+                    <p class="footer-col-title">Croisade QTRV</p>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="index.html#vision">Notre Vision</a></li>
+                        <li><a href="ecole-des-adorateurs.html">École des Adorateurs</a></li>
+                        <li><a href="index.html#inscription">S'inscrire</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <p class="footer-col-title">Contact</p>
+                    <ul class="footer-links">
+                        <li><a href="#"><span class="badge-icon" aria-hidden="true"><i data-lucide="map-pin"></i></span>Région de l'Ouest</a></li>
+                        <li><a href="#"><span class="badge-icon" aria-hidden="true"><i data-lucide="flag"></i></span>Cameroun</a></li>
+                        <li><a href="tel:+237693333408"><span class="badge-icon" aria-hidden="true"><i data-lucide="phone"></i></span>+237 693 333 408</a></li>
+                        <li><a href="mailto:contact@croisade-ctrv.cm"><span class="badge-icon" aria-hidden="true"><i data-lucide="mail"></i></span>contact@croisade-ctrv.cm</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Bottom bar -->
+            <div class="footer-bottom">
+                <p class="footer-copy">
+                    © 2026 Croisade Que Ton Règne Vienne · Magazine IYM. Tous droits réservés. Fait avec <span class="badge-icon" aria-hidden="true"><i data-lucide="heart"></i></span> pour la gloire de Dieu.
+                </p>
+                <div class="footer-bottom-links">
+                    <a href="#">Confidentialité</a>
+                    <a href="#">Mentions légales</a>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- Scroll to top -->
+    <button id="scrollTop" class="scroll-top" aria-label="Retour en haut de page">↑</button>
+
+</body>
+
+</html>
