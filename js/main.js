@@ -342,11 +342,13 @@ function initMobileNav() {
     hamburger.addEventListener('click', () => {
         mobileNav.classList.add('open');
         document.body.style.overflow = 'hidden';
+        hamburger.setAttribute('aria-expanded', 'true');
     });
 
     const close = () => {
         mobileNav.classList.remove('open');
         document.body.style.overflow = '';
+        hamburger.setAttribute('aria-expanded', 'false');
     };
 
     if (closeBtn) closeBtn.addEventListener('click', close);

@@ -4,10 +4,13 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Croisade de Louange et d'Adoration — Que Ton Règne Vienne. Un événement prophétique pour le Cameroun Nouveau, Région de l'Ouest. Jésus au centre de l'adoration." />
-    <meta name="keywords" content="croisade, louange, adoration, Cameroun, ouest, revival, que ton règne vienne, jeunesse, Bafoussam" />
+    <meta name="description"
+        content="Croisade de Louange et d'Adoration — Que Ton Règne Vienne. Un événement prophétique pour le Cameroun Nouveau, Région de l'Ouest. Jésus au centre de l'adoration." />
+    <meta name="keywords"
+        content="croisade, louange, adoration, Cameroun, ouest, revival, que ton règne vienne, jeunesse, Bafoussam" />
     <meta property="og:title" content="Croisade Que Ton Règne Vienne — Louange & Adoration" />
-    <meta property="og:description" content="Un événement prophétique de louange et d'adoration pour le Cameroun Nouveau. Région de l'Ouest, Cameroun." />
+    <meta property="og:description"
+        content="Un événement prophétique de louange et d'adoration pour le Cameroun Nouveau. Région de l'Ouest, Cameroun." />
     <meta property="og:type" content="website" />
     <meta name="theme-color" content="#E84C0E" />
 
@@ -41,6 +44,9 @@
             <a href="index.html" class="navbar-logo" aria-label="Accueil">
                 <img src="images/logo.jpg" alt="Logo Croisade Que Ton Règne Vienne" class="logo-img" />
             </a>
+            <button id="hamburger" class="hamburger" aria-label="Ouvrir le menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
 
             <nav class="navbar-nav" aria-label="Menu principal">
                 <a href="#vision">Notre Vision</a>
@@ -59,13 +65,25 @@
 
 
     <!-- Hamburger -->
-    <button id="hamburger" class="hamburger" aria-label="Ouvrir le menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
+    
 
     </div>
     </div>
     </header>
+    <!-- Mobile Navigation Overlay -->
+    <nav id="mobileNav" class="mobile-nav" aria-label="Menu mobile">
+        <button id="mobileNavClose" class="mobile-nav-close" aria-label="Fermer le menu">&times;</button>
+        <div class="mobile-nav-logo">
+            <img src="images/logo.jpg" alt="Logo Croisade Que Ton Règne Vienne" class="logo-img" />
+        </div>
+        <ul class="mobile-nav-links">
+            <li><a href="#vision">Notre Vision</a></li>
+            <li><a href="#piliers">Les Piliers</a></li>
+            <li><a href="#mission">Notre Mission</a></li>
+            <li><a href="#inscription">S'inscrire</a></li>
+            <li><a href="ecole-des-adorateurs.html">École des Adorateurs</a></li>
+        </ul>
+    </nav>
 
 
     <!-- ═══════════════════════════════════════════════════════
@@ -91,28 +109,31 @@
 
                     <div class="hero-badge">
                         <span class="badge badge-white">
-            <span class="badge-icon" aria-hidden="true"><i data-lucide="flame"></i></span>Région de l'Ouest — Cameroun
+                            <span class="badge-icon" aria-hidden="true"><i data-lucide="flame"></i></span>Région de
+                            l'Ouest — Cameroun
                         </span>
                     </div>
 
                     <p class="hero-slogan">Jésus au centre de l'adoration</p>
 
                     <h1 class="hero-title">
-                        Que Ton<br/>
-                        <span class="fire-word">Règne</span><br/> Vienne
+                        Que Ton<br />
+                        <span class="fire-word">Règne</span><br /> Vienne
                     </h1>
 
                     <p class="hero-desc">
-                        Un événement prophétique de Louange et d'Adoration pour le Cameroun Nouveau. Des jeunes de tout horizon, unis pour manifester l'adoration véritable.
+                        Un événement prophétique de Louange et d'Adoration pour le Cameroun Nouveau. Des jeunes de tout
+                        horizon, unis pour manifester l'adoration véritable.
                     </p>
 
                     <div class="hero-btns">
                         <a href="#inscription" class="btn btn-primary" id="heroCta1">
-                            <span class="badge-icon" aria-hidden="true"><i data-lucide="hand-heart"></i></span>Rejoindre la Croisade
+                            <span class="badge-icon" aria-hidden="true"><i data-lucide="hand-heart"></i></span>Rejoindre
+                            la Croisade
                         </a>
                         <a href="#vision" class="btn btn-outline" id="heroCta2">
-            Découvrir la vision
-          </a>
+                            Découvrir la vision
+                        </a>
                     </div>
 
                     <!-- Info card -->
@@ -156,8 +177,10 @@
 
                         <!-- Carte flottante 2 -->
                         <div class="float-card-dark hero-float-card-2">
-                            <div style="font-size:22px; margin-bottom:6px;" aria-hidden="true"><i data-lucide="sparkles"></i></div>
-                            <p style="font-size:13px; font-weight:700; color:var(--accent); margin-bottom:4px;">Nation de Réveil</p>
+                            <div style="font-size:22px; margin-bottom:6px;" aria-hidden="true"><i
+                                    data-lucide="sparkles"></i></div>
+                            <p style="font-size:13px; font-weight:700; color:var(--accent); margin-bottom:4px;">Nation
+                                de Réveil</p>
                             <p style="font-size:12px; color:rgba(255,255,255,0.65);">Cameroun au centre</p>
                         </div>
 
@@ -170,9 +193,8 @@
         <!-- Wave de bas -->
         <div class="hero-wave" aria-hidden="true">
             <svg viewBox="0 0 1440 100" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-      <path d="M0,60 C240,120 480,0 720,60 C960,120 1200,0 1440,60 L1440,100 L0,100 Z"
-            fill="#ffffff" />
-    </svg>
+                <path d="M0,60 C240,120 480,0 720,60 C960,120 1200,0 1440,60 L1440,100 L0,100 Z" fill="#ffffff" />
+            </svg>
         </div>
 
     </section>
@@ -213,20 +235,24 @@
                     <p class="section-tag">Notre Vision</p>
 
                     <h2 class="vision-title" id="vision-title">
-                        Une Nation de<br/>
-                        <span class="text-gradient">Réveil pour</span><br/> les Nations
+                        Une Nation de<br />
+                        <span class="text-gradient">Réveil pour</span><br /> les Nations
                     </h2>
 
                     <p class="vision-text">
-                        Dans un contexte prophétique où le <strong>Cameroun est une nation de réveil pour les autres nations</strong>, la région de l'ouest quant à elle joue un rôle capital et indispensable.
+                        Dans un contexte prophétique où le <strong>Cameroun est une nation de réveil pour les autres
+                            nations</strong>, la région de l'ouest quant à elle joue un rôle capital et indispensable.
                     </p>
 
                     <blockquote class="vision-quote">
-                        « Terre de louange et d'Adoration, le Seigneur nous convie à prendre conscience, car c'est le temps de vivre et de manifester l'adoration véritable. »
+                        « Terre de louange et d'Adoration, le Seigneur nous convie à prendre conscience, car c'est le
+                        temps de vivre et de manifester l'adoration véritable. »
                     </blockquote>
 
                     <p class="vision-text">
-                        C'est dans cette optique que nous, les <strong>jeunes venus de tout horizon</strong>, acceptons d'être utilisés par Dieu afin d'apporter notre pierre de construction pour le <strong>Cameroun Nouveau</strong> au travers de la Croisade
+                        C'est dans cette optique que nous, les <strong>jeunes venus de tout horizon</strong>, acceptons
+                        d'être utilisés par Dieu afin d'apporter notre pierre de construction pour le <strong>Cameroun
+                            Nouveau</strong> au travers de la Croisade
                         de Louange et d'Adoration.
                     </p>
 
@@ -255,7 +281,7 @@
             <!-- En-tête -->
             <div class="piliers-header reveal">
                 <p class="section-tag">Nos Piliers</p>
-                <h2 class="piliers-title" id="piliers-title">Les Fondements<br/>de la Croisade</h2>
+                <h2 class="piliers-title" id="piliers-title">Les Fondements<br />de la Croisade</h2>
                 <p class="piliers-subtitle">
                     Trois dimensions indissociables au cœur de notre mission pour l'adoration véritable.
                 </p>
@@ -274,7 +300,8 @@
                         <p class="pilier-number">01 — Pilier</p>
                         <h3 class="pilier-name">La Louange</h3>
                         <p class="pilier-text">
-                            Expression venant des sentiments que les actions de Dieu ont provoqués en nous et autour de nous.
+                            Expression venant des sentiments que les actions de Dieu ont provoqués en nous et autour de
+                            nous.
                         </p>
                         <span class="pilier-cta">En savoir plus →</span>
                     </div>
@@ -306,7 +333,8 @@
                         <p class="pilier-number">03 — Pilier</p>
                         <h3 class="pilier-name">Le Réveil</h3>
                         <p class="pilier-text">
-                            L'Esprit de Dieu en mouvement dans la vie de la jeunesse pour la transformation des différentes sphères d'influence.
+                            L'Esprit de Dieu en mouvement dans la vie de la jeunesse pour la transformation des
+                            différentes sphères d'influence.
                         </p>
                         <span class="pilier-cta">En savoir plus →</span>
                     </div>
@@ -318,9 +346,8 @@
         <!-- Wave bottom -->
         <div class="wave-divider" style="margin-top:80px;" aria-hidden="true">
             <svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-      <path d="M0,40 C360,80 720,0 1080,40 C1260,60 1380,20 1440,40 L1440,0 L0,0 Z"
-            fill="var(--muted-bg)" />
-    </svg>
+                <path d="M0,40 C360,80 720,0 1080,40 C1260,60 1380,20 1440,40 L1440,0 L0,0 Z" fill="var(--muted-bg)" />
+            </svg>
         </div>
     </section>
 
@@ -333,9 +360,8 @@
         <!-- Wave top -->
         <div class="mission-wave-top" aria-hidden="true">
             <svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-      <path d="M0,40 C360,0 720,80 1080,40 C1260,20 1380,60 1440,40 L1440,0 L0,0 Z"
-            fill="var(--muted-bg)" />
-    </svg>
+                <path d="M0,40 C360,0 720,80 1080,40 C1260,20 1380,60 1440,40 L1440,0 L0,0 Z" fill="var(--muted-bg)" />
+            </svg>
         </div>
 
         <!-- BG image -->
@@ -355,27 +381,32 @@
                     <p class="section-tag" style="color:var(--accent);">Notre Mission</p>
 
                     <h2 class="mission-title" id="mission-title">
-                        Apporter Notre<br/>
-                        <span style="background:linear-gradient(135deg,var(--primary-light),var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">
-            Pierre de Construction
-          </span><br/> au Cameroun
+                        Apporter Notre<br />
+                        <span
+                            style="background:linear-gradient(135deg,var(--primary-light),var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">
+                            Pierre de Construction
+                        </span><br /> au Cameroun
                     </h2>
 
                     <p class="mission-text">
-                        Nous croyons que Dieu a un plan prophétique pour le Cameroun. Notre croisade est un acte de foi collectif pour que la gloire de Dieu se manifeste depuis la Région de l'Ouest vers toutes les nations.
+                        Nous croyons que Dieu a un plan prophétique pour le Cameroun. Notre croisade est un acte de foi
+                        collectif pour que la gloire de Dieu se manifeste depuis la Région de l'Ouest vers toutes les
+                        nations.
                     </p>
 
                     <div class="mission-features">
                         <div class="mission-feature">
                             <div class="mission-feature-dot"></div>
                             <p class="mission-feature-text">
-                                <strong style="color:white;">Rassembler les jeunes</strong> de toute part dans un esprit d'unité pour la louange et l'adoration.
+                                <strong style="color:white;">Rassembler les jeunes</strong> de toute part dans un esprit
+                                d'unité pour la louange et l'adoration.
                             </p>
                         </div>
                         <div class="mission-feature">
                             <div class="mission-feature-dot"></div>
                             <p class="mission-feature-text">
-                                <strong style="color:white;">Établir l'adoration véritable</strong> comme fondement du réveil national.
+                                <strong style="color:white;">Établir l'adoration véritable</strong> comme fondement du
+                                réveil national.
                             </p>
                         </div>
                         <div class="mission-feature">
@@ -387,14 +418,15 @@
                         <div class="mission-feature">
                             <div class="mission-feature-dot"></div>
                             <p class="mission-feature-text">
-                                <strong style="color:white;">Construire ensemble</strong> le Cameroun Nouveau dans la louange et la prière.
+                                <strong style="color:white;">Construire ensemble</strong> le Cameroun Nouveau dans la
+                                louange et la prière.
                             </p>
                         </div>
                     </div>
 
                     <a href="#inscription" class="btn btn-accent">
-          Participer à la Mission →
-        </a>
+                        Participer à la Mission →
+                    </a>
 
                 </div>
 
@@ -438,25 +470,29 @@
 
                 <div class="counter-item reveal delay-100">
                     <span class="counter-emoji" aria-hidden="true"><i data-lucide="flame"></i></span>
-                    <span class="counter-number" data-target="1000" data-suffix="+" aria-label="Plus de 1000                                                                     participants attendus">0</span>
+                    <span class="counter-number" data-target="1000" data-suffix="+"
+                        aria-label="Plus de 1000                                                                     participants attendus">0</span>
                     <p class="counter-label">Participants attendus</p>
                 </div>
 
                 <div class="counter-item reveal delay-200">
                     <span class="counter-emoji" aria-hidden="true"><i data-lucide="globe"></i></span>
-                    <span class="counter-number" data-target="10" data-suffix="+" aria-label="Plus de 10 villes représentées">0</span>
+                    <span class="counter-number" data-target="10" data-suffix="+"
+                        aria-label="Plus de 10 villes représentées">0</span>
                     <p class="counter-label">Villes représentées</p>
                 </div>
 
                 <div class="counter-item reveal delay-300">
                     <span class="counter-emoji" aria-hidden="true"><i data-lucide="wind"></i></span>
-                    <span class="counter-number" data-target="4" data-suffix=" jours" aria-label="4 jours de croisade">4</span>
+                    <span class="counter-number" data-target="4" data-suffix=" jours"
+                        aria-label="4 jours de croisade">4</span>
                     <p class="counter-label">Jours de croisade</p>
                 </div>
 
                 <div class="counter-item reveal delay-400">
                     <span class="counter-emoji" aria-hidden="true"><i data-lucide="church"></i></span>
-                    <span class="counter-number" data-target="3" data-suffix="re édition" aria-label="Première édition">3</span>
+                    <span class="counter-number" data-target="3" data-suffix="re édition"
+                        aria-label="Première édition">3</span>
 
                 </div>
 
@@ -477,12 +513,13 @@
 
                     <p class="section-tag">Inscriptions</p>
                     <h2 class="inscription-title" id="inscription-title">
-                        Rejoignez le<br/>
-                        <span class="text-gradient">Mouvement</span><br/> d'Adoration
+                        Rejoignez le<br />
+                        <span class="text-gradient">Mouvement</span><br /> d'Adoration
                     </h2>
 
                     <p class="inscription-text">
-                        Inscrivez-vous dès maintenant pour faire partie de cet événement prophétique. Venez apporter votre pierre à la construction du Cameroun Nouveau.
+                        Inscrivez-vous dès maintenant pour faire partie de cet événement prophétique. Venez apporter
+                        votre pierre à la construction du Cameroun Nouveau.
                     </p>
 
                     <div class="inscription-benefits">
@@ -528,51 +565,59 @@
                             <div class="form-row">
                                 <div class="form-group">
                                     <label class="form-label" for="nom">Nom *</label>
-                                    <input class="form-control" type="text" id="nom" name="nom" placeholder="Votre nom" required autocomplete="family-name" />
+                                    <input class="form-control" type="text" id="nom" name="nom" placeholder="Votre nom"
+                                        required autocomplete="family-name" />
                                 </div>
                                 <div class="form-group">
                                     <label class="form-label" for="prenom">Prénom *</label>
-                                    <input class="form-control" type="text" id="prenom" name="prenom" placeholder="Votre prénom" required autocomplete="given-name" />
+                                    <input class="form-control" type="text" id="prenom" name="prenom"
+                                        placeholder="Votre prénom" required autocomplete="given-name" />
                                 </div>
                             </div>
 
                             <div class="form-row">
                                 <div class="form-group">
                                     <label class="form-label" for="telephone">Téléphone</label>
-                                    <input class="form-control" type="tel" id="telephone" name="telephone" placeholder="+237 6XX XXX XXX" autocomplete="tel" />
+                                    <input class="form-control" type="tel" id="telephone" name="telephone"
+                                        placeholder="+237 6XX XXX XXX" autocomplete="tel" />
                                 </div>
                                 <div class="form-group">
                                     <label class="form-label" for="ville">Ville</label>
-                                    <input class="form-control" type="text" id="ville" name="ville" placeholder="Ex: Bafoussam, Douala…" autocomplete="address-level2" />
+                                    <input class="form-control" type="text" id="ville" name="ville"
+                                        placeholder="Ex: Bafoussam, Douala…" autocomplete="address-level2" />
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label class="form-label" for="eglise">Nom de votre Église / Ministère</label>
-                                <input class="form-control" type="text" id="eglise" name="eglise" placeholder="Ex: Église du Plein Évangile…" />
+                                <input class="form-control" type="text" id="eglise" name="eglise"
+                                    placeholder="Ex: Église du Plein Évangile…" />
                             </div>
 
                             <div class="form-group">
                                 <label class="form-label" for="participation">Mode de participation</label>
                                 <select class="form-control" id="participation" name="participation">
-                <option value="">— Choisissez votre rôle —</option>
-                <option value="participant">Participant / Adorateur</option>
-                <option value="musicien">Musicien / Chantre</option>
-                <option value="intercesseur">Intercesseur</option>
-                <option value="bénévole">Bénévole / Serviteur</option>
-                <option value="organisateur">Organisateur / Équipe</option>
-                <option value="media">Média / Communication</option>
-              </select>
+                                    <option value="">— Choisissez votre rôle —</option>
+                                    <option value="participant">Participant / Adorateur</option>
+                                    <option value="musicien">Musicien / Chantre</option>
+                                    <option value="intercesseur">Intercesseur</option>
+                                    <option value="bénévole">Bénévole / Serviteur</option>
+                                    <option value="organisateur">Organisateur / Équipe</option>
+                                    <option value="media">Média / Communication</option>
+                                </select>
                             </div>
 
                             <div class="form-group">
                                 <label class="form-label" for="message">Message (facultatif)</label>
-                                <textarea class="form-control" id="message" name="message" rows="3" placeholder="Partagez votre cœur, votre témoignage ou vos questions…" style="resize:vertical; min-height:80px;"></textarea>
+                                <textarea class="form-control" id="message" name="message" rows="3"
+                                    placeholder="Partagez votre cœur, votre témoignage ou vos questions…"
+                                    style="resize:vertical; min-height:80px;"></textarea>
                             </div>
 
                             <button type="submit" class="btn btn-primary form-submit" id="formSubmit">
-              <span class="badge-icon" aria-hidden="true"><i data-lucide="hand-heart"></i></span>Confirmer mon Inscription
-            </button>
+                                <span class="badge-icon" aria-hidden="true"><i
+                                        data-lucide="hand-heart"></i></span>Confirmer mon Inscription
+                            </button>
 
                             <!-- Messages de retour -->
                             <div class="form-message success" role="alert" aria-live="polite"></div>
@@ -600,20 +645,21 @@
                 </div>
 
                 <h2 class="cta-title">
-                    Jésus au Centre<br/>de l'Adoration
+                    Jésus au Centre<br />de notre l'Adoration
                 </h2>
 
                 <p class="cta-text">
-                    Le temps est venu. Le Seigneur appelle la jeunesse du Cameroun à se lever, à louer, à adorer, et à construire ensemble le Cameroun Nouveau. Soyez au rendez-vous !
+                    Le temps est venu. Le Seigneur appelle la jeunesse du Cameroun à se lever, à louer, à adorer, et à
+                    construire ensemble le Cameroun Nouveau. Soyez au rendez-vous !
                 </p>
 
                 <div class="cta-btns">
                     <a href="#inscription" class="btn btn-white" id="ctaBtn1">
-          S'inscrire maintenant
-        </a>
+                        S'inscrire maintenant
+                    </a>
                     <a href="#vision" class="btn btn-outline" id="ctaBtn2">
-          En savoir plus
-        </a>
+                        En savoir plus
+                    </a>
                 </div>
 
             </div>
@@ -632,11 +678,13 @@
                 <!-- Brand -->
                 <div class="footer-brand">
                     <div class="footer-logo">
-                        <img src="images/logo.jpg" alt="Logo Croisade Que Ton Règne Vienne" class="footer-logo-img" onerror="this.style.display='none'" />
+                        <img src="images/logo.jpg" alt="Logo Croisade Que Ton Règne Vienne" class="footer-logo-img"
+                            onerror="this.style.display='none'" />
                         <span class="footer-logo-name">Croisade QTRV</span>
                     </div>
                     <p class="footer-desc">
-                        Un mouvement prophétique de louange et d'adoration pour le Cameroun Nouveau. Jésus au centre de notre adoration.
+                        Un mouvement prophétique de louange et d'adoration pour le Cameroun Nouveau. Jésus au centre de
+                        notre adoration.
                     </p>
                     <div class="footer-social">
                         <a href="#" class="social-link" aria-label="Facebook" title="Facebook">f</a>
@@ -654,7 +702,8 @@
                         <li><a href="#piliers">Les Piliers</a></li>
                         <li><a href="#mission">Notre Mission</a></li>
                         <li><a href="#compteurs">En Chiffres</a></li>
-                        <li><a href="ecole-des-adorateurs.html" style="color:var(--accent);"><span class="badge-icon" aria-hidden="true"><i data-lucide="music-2"></i></span>École des Adorateurs</a></li>
+                        <li><a href="ecole-des-adorateurs.html" style="color:var(--accent);"><span class="badge-icon"
+                                    aria-hidden="true"><i data-lucide="music-2"></i></span>École des Adorateurs</a></li>
                         <li><a href="#inscription">S'inscrire</a></li>
                     </ul>
                 </div>
@@ -675,10 +724,14 @@
                 <div>
                     <p class="footer-col-title">Contact</p>
                     <ul class="footer-links">
-                        <li><a href="#"><span class="badge-icon" aria-hidden="true"><i data-lucide="map-pin"></i></span>Région de l'Ouest</a></li>
-                        <li><a href="#"><span class="badge-icon" aria-hidden="true"><i data-lucide="flag"></i></span>Cameroun</a></li>
-                        <li><a href="mailto:contact@croisade-ctrv.cm"><span class="badge-icon" aria-hidden="true"><i data-lucide="mail"></i></span>contact@croisade-ctrv.cm</a></li>
-                        <li><a href="tel:+237600000000"><span class="badge-icon" aria-hidden="true"><i data-lucide="phone"></i></span>+237 6XX XXX XXX</a></li>
+                        <li><a href="#"><span class="badge-icon" aria-hidden="true"><i
+                                        data-lucide="map-pin"></i></span>Région de l'Ouest</a></li>
+                        <li><a href="#"><span class="badge-icon" aria-hidden="true"><i
+                                        data-lucide="flag"></i></span>Cameroun</a></li>
+                        <li><a href="mailto:contact@croisade-ctrv.cm"><span class="badge-icon" aria-hidden="true"><i
+                                        data-lucide="mail"></i></span>contact@croisade-ctrv.cm</a></li>
+                        <li><a href="tel:+237600000000"><span class="badge-icon" aria-hidden="true"><i
+                                        data-lucide="phone"></i></span>+237695523850</a></li>
                     </ul>
                 </div>
 
@@ -687,7 +740,8 @@
             <!-- Bottom bar -->
             <div class="footer-bottom">
                 <p class="footer-copy">
-                    © 2026 Croisade Que Ton Règne Vienne. Tous droits réservés. Fait avec <span class="badge-icon" aria-hidden="true"><i data-lucide="heart"></i></span> pour la gloire de Dieu.
+                    © 2026 Croisade Que Ton Règne Vienne. Tous droits réservés. <span class="badge-icon"
+                        aria-hidden="true"><i data-lucide="heart"></i></span> pour la gloire de Dieu.
                 </p>
                 <div class="footer-bottom-links">
                     <a href="#">Confidentialité</a>
