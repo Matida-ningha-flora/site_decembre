@@ -411,14 +411,14 @@ h3 {
     display: none;
 }
 
-.hamburger span {
-    display: block;
-    width: 100%;
-    height: 5px;
-    background: var(--white);
-    border-radius: 2px;
-    transition: all 0.3s ease;
-}
+    .hamburger span {
+        display: block;
+        width: 100%;
+        height: 5px;
+        background: #7F00FF; /* violet */
+        border-radius: 2px;
+        transition: all 0.3s ease;
+    }
 
 /* Mobile navigation overlay and grid adjustments */
 @media (max-width: 900px) {
@@ -431,8 +431,8 @@ h3 {
     }
     .hamburger {
         display: flex;
-        width: 49px;
-        height: 37px;
+        width: 30px;
+        height: 22px;
         cursor: pointer;
     }
     /* Mobile navigation overlay */
@@ -477,6 +477,7 @@ h3 {
         font-size: 2rem;
         color: var(--white);
         cursor: pointer;
+        z-index: 2001; /* ensure above overlay */
     }
     /* Grid adjustments for mobile */
     .hero-grid,

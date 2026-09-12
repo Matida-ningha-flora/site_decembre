@@ -12,11 +12,7 @@ define('DB_PASSWORD', '');            // Votre mot de passe MySQL
 define('DB_NAME',     'croisade_db');
 define('DB_CHARSET',  'utf8mb4');
 
-define('DB_HOST',     'sql307.infinityfree.com');
-define('DB_USER',     'if0_42720108');        
-define('DB_PASSWORD', 'angedallia2003');  
-define('DB_NAME',     'if0_42720108_croisade_db');
-define('DB_CHARSET',  'utf8mb4');
+
 
 
 /* ─── Connexion PDO ─────────────────────────────────────── */
