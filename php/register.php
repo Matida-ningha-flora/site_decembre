@@ -29,13 +29,15 @@ function respond(bool $success, string $message, int $code = 200): void {
 }
 
 /* ─── Récupération des champs ────────────────────────────── */
-$nom           = clean($_POST['nom']           ?? '');
-$prenom        = clean($_POST['prenom']        ?? '');
-$telephone     = clean($_POST['telephone']     ?? '');
-$ville         = clean($_POST['ville']         ?? '');
-$eglise        = clean($_POST['eglise']        ?? '');
-$participation = clean($_POST['participation'] ?? '');
-$message       = clean($_POST['message']       ?? '');
+$nom             = clean($_POST['nom']             ?? '');
+$prenom          = clean($_POST['prenom']          ?? '');
+$email           = clean($_POST['email']           ?? '');
+$telephone       = clean($_POST['telephone']       ?? '');
+$ville           = clean($_POST['ville']           ?? '');
+$eglise          = clean($_POST['eglise']          ?? '');
+$participation   = clean($_POST['participation']   ?? '');
+$message         = clean($_POST['message']         ?? '');
+$groupe_whatsapp = clean($_POST['groupe_whatsapp'] ?? '');
 
 /* ─── Validation ─────────────────────────────────────────── */
 $errors = [];
@@ -43,61 +45,58 @@ $errors = [];
 if (empty($nom))    $errors[] = 'Le nom est obligatoire.';
 if (empty($prenom)) $errors[] = 'Le prénom est obligatoire.';
 
-if (!empty($telephone) && !preg_match('/^[\d\s\+\-\(\)]{6,20}$/', $telephone)) {
+if (!empty($email) && !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    $errors[] = 'Adresse email invalide.';
+}
+
+if (!empty($telephone) && !preg_match('/^[\d\s\+\-\(\)]{6,25}$/', $telephone)) {
     $errors[] = 'Numéro de téléphone invalide.';
 }
 
-if (strlen($nom)    > 100) $errors[] = 'Le nom est trop long.';
-if (strlen($prenom) > 100) $errors[] = 'Le prénom est trop long.';
-if (strlen($eglise) > 200) $errors[] = "Le nom d'église est trop long.";
-if (strlen($message) > 2000) $errors[] = 'Le message est trop long.';
+if (strlen($nom)             > 100) $errors[] = 'Le nom est trop long.';
+if (strlen($prenom)          > 100) $errors[] = 'Le prénom est trop long.';
+if (strlen($eglise)          > 200) $errors[] = "Le nom d'église est trop long.";
+if (strlen($message)         > 2000) $errors[] = 'Le message est trop long.';
+if (strlen($groupe_whatsapp) > 500)  $errors[] = 'La réponse au groupe est trop longue.';
 
 if (!empty($errors)) {
     respond(false, implode(' ', $errors), 422);
 }
 
-/* ─── Anti-spam : vérification doublons (même email + 24h) ── */
+/* ─── Enregistrement dans la base de données ─────────────── */
 try {
     ensureTable();
     $pdo = getDB();
 
+    $createdAt = date('Y-m-d H:i:s');
+
     /* ─── Insertion ─────────────────────────────────────────── */
     $insertStmt = $pdo->prepare("
         INSERT INTO inscriptions
-            (nom, prenom, telephone, ville, eglise, participation, message, created_at)
+            (nom, prenom, email, telephone, ville, eglise, participation, message, groupe_whatsapp, created_at)
         VALUES
-            (:nom, :prenom, :telephone, :ville, :eglise, :participation, :message, NOW())
+            (:nom, :prenom, :email, :telephone, :ville, :eglise, :participation, :message, :groupe_whatsapp, :created_at)
     ");
 
     $insertStmt->execute([
-        ':nom'           => $nom,
-        ':prenom'        => $prenom,
-        ':telephone'     => $telephone ?: null,
-        ':ville'         => $ville     ?: null,
-        ':eglise'        => $eglise    ?: null,
-        ':participation' => $participation ?: null,
-        ':message'       => $message   ?: null,
+        ':nom'             => $nom,
+        ':prenom'          => $prenom,
+        ':email'           => $email           ?: null,
+        ':telephone'       => $telephone       ?: null,
+        ':ville'           => $ville           ?: null,
+        ':eglise'          => $eglise          ?: null,
+        ':participation'   => $participation   ?: null,
+        ':message'         => $message         ?: null,
+        ':groupe_whatsapp' => $groupe_whatsapp ?: null,
+        ':created_at'      => $createdAt,
     ]);
 
     $insertId = $pdo->lastInsertId();
 
-    /* ─── (Optionnel) Envoi email de confirmation ────────────
-       Décommentez et configurez si vous avez PHP mail() disponible
-
-    $to      = $email;
-    $subject = '✅ Confirmation d\'inscription — Croisade Que Ton Règne Vienne';
-    $body    = "Bonjour {$prenom} {$nom},\n\n"
-             . "Votre inscription a bien été enregistrée. Nous vous contacterons prochainement.\n\n"
-             . "Jésus au centre de l'adoration 🔥\n"
-             . "L'équipe Croisade Que Ton Règne Vienne";
-    $headers = 'From: noreply@croisade-ctrv.cm';
-    @mail($to, $subject, $body, $headers);
-    ──────────────────────────────────────────────────────── */
-
     respond(true, "🙏 Inscription confirmée ! Bienvenue, {$prenom}. Que Dieu vous bénisse abondamment !");
 
-} catch (PDOException $e) {
-    // Log l'erreur en interne (ne pas exposer à l'utilisateur)
+} catch (Throwable $e) {
+    // Log l'erreur en interne
     error_log('[Croisade Inscription Error] ' . $e->getMessage());
     respond(false, 'Une erreur technique est survenue. Veuillez réessayer ou nous contacter directement.', 500);
 }

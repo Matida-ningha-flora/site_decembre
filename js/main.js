@@ -6,6 +6,11 @@
 // ─── GSAP Registration ───────────────────────────────────────
 gsap.registerPlugin(ScrollTrigger);
 
+// ─── CONFIGURATION EN LIGNE (GOOGLE SHEETS / EMAIL) ──────────
+// Collez ici l'URL Web de votre Google Apps Script (voir google_sheets_script.js) :
+// Exemple : const GOOGLE_SHEET_URL = "https://script.google.com/macros/s/AKfycb.../exec";
+const GOOGLE_SHEET_URL = "https://script.google.com/macros/s/AKfycbwOgnsGpZy7y_SpQewBHF0jmgoKminMM9gaFqoojVl1xbqJ7Si2mmU6jugUJLTQvSDW/exec";
+
 // ─── UTILITY ─────────────────────────────────────────────────
 const $ = (sel, ctx = document) => ctx.querySelector(sel);
 const $$ = (sel, ctx = document) => [...ctx.querySelectorAll(sel)];
@@ -84,12 +89,12 @@ function initHeroAnimations() {
     const fc2 = $('.hero-float-card-2');
 
     tl.from([badge, slogan].filter(Boolean), {
-            y: 30,
-            opacity: 0,
-            duration: 0.7,
-            ease: 'power3.out',
-            stagger: 0.1
-        })
+        y: 30,
+        opacity: 0,
+        duration: 0.7,
+        ease: 'power3.out',
+        stagger: 0.1
+    })
         .from(title, {
             y: 40,
             opacity: 0,
@@ -370,7 +375,7 @@ function initForm() {
     const msgSuccess = form.querySelector('.form-message.success');
     const msgError = form.querySelector('.form-message.error');
 
-    form.addEventListener('submit', async(e) => {
+    form.addEventListener('submit', async (e) => {
         e.preventDefault();
 
         // Reset messages
@@ -384,31 +389,22 @@ function initForm() {
 
         try {
             const formData = new FormData(form);
-            const response = await fetch('php/register.php', {
-                method: 'POST',
-                body: formData
-            }).catch(() => {
-                // Mock response when backend is unreachable
-                return {
-                    json: async () => ({
-                        success: true,
-                        message: '✅ Inscription simulée – serveur indisponible, mais votre demande a été acceptée en mode démo.'
-                    })
-                };
-            });
 
-            const result = await response.json();
+            // 1. Si une URL Google Sheets est configurée (Recommandé pour Vercel)
+            if (typeof GOOGLE_SHEET_URL !== 'undefined' && GOOGLE_SHEET_URL.trim() !== "") {
+                await fetch(GOOGLE_SHEET_URL, {
+                    method: 'POST',
+                    body: formData,
+                    mode: 'no-cors' // Évite tout blocage CORS avec Google Apps Script
+                });
 
-            if (result.success) {
-                // Success animation
                 if (msgSuccess) {
-                    msgSuccess.textContent = result.message || '✅ Inscription enregistrée avec succès ! Que Dieu vous bénisse.';
+                    msgSuccess.textContent = '🙏 Inscription confirmée ! Vos informations ont bien été enregistrées dans le Google Sheet. Que Dieu vous bénisse !';
                     msgSuccess.style.display = 'block';
                     gsap.from(msgSuccess, { y: 10, opacity: 0, duration: 0.5, ease: 'power3.out' });
                 }
                 form.reset();
 
-                // Animate success
                 gsap.to(submitBtn, {
                     scale: 1.05,
                     duration: 0.2,
@@ -416,21 +412,47 @@ function initForm() {
                     repeat: 1,
                     ease: 'power2.out'
                 });
+
             } else {
-                if (msgError) {
-                    msgError.textContent = result.message || '❌ Une erreur est survenue. Veuillez réessayer.';
-                    msgError.style.display = 'block';
-                    gsap.from(msgError, { y: 10, opacity: 0, duration: 0.5, ease: 'power3.out' });
+                // 2. Sinon, envoi au backend PHP local (SQLite data.db)
+                const response = await fetch('php/register.php', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                const result = await response.json();
+
+                if (result.success) {
+                    if (msgSuccess) {
+                        msgSuccess.textContent = result.message || '✅ Inscription enregistrée avec succès ! Que Dieu vous bénisse.';
+                        msgSuccess.style.display = 'block';
+                        gsap.from(msgSuccess, { y: 10, opacity: 0, duration: 0.5, ease: 'power3.out' });
+                    }
+                    form.reset();
+
+                    gsap.to(submitBtn, {
+                        scale: 1.05,
+                        duration: 0.2,
+                        yoyo: true,
+                        repeat: 1,
+                        ease: 'power2.out'
+                    });
+                } else {
+                    if (msgError) {
+                        msgError.textContent = result.message || '❌ Une erreur est survenue. Veuillez réessayer.';
+                        msgError.style.display = 'block';
+                        gsap.from(msgError, { y: 10, opacity: 0, duration: 0.5, ease: 'power3.out' });
+                    }
                 }
             }
         } catch (err) {
-                // Fallback success when any error occurs (e.g., no backend)
-                if (msgSuccess) {
-                    msgSuccess.textContent = '✅ Inscription simulée – serveur indisponible, mais votre demande a été acceptée en mode démo.';
-                    msgSuccess.style.display = 'block';
-                    gsap.from(msgSuccess, { y: 10, opacity: 0, duration: 0.5, ease: 'power3.out' });
-                }
-            } finally {
+            console.error('Erreur inscription:', err);
+            if (msgError) {
+                msgError.textContent = '❌ Une erreur est survenue lors de l\'envoi. Veuillez vérifier votre connexion ou réessayer.';
+                msgError.style.display = 'block';
+                gsap.from(msgError, { y: 10, opacity: 0, duration: 0.5, ease: 'power3.out' });
+            }
+        } finally {
             submitBtn.classList.remove('btn-loading');
             submitBtn.textContent = originalText;
         }

@@ -52,33 +52,44 @@ function ensureTable(): void {
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
                 nom TEXT NOT NULL,
                 prenom TEXT NOT NULL,
-                email TEXT NOT NULL,
-                telephone TEXT,
-                ville TEXT,
-                eglise TEXT,
-                participation TEXT,
-                message TEXT,
+                email TEXT DEFAULT NULL,
+                telephone TEXT DEFAULT NULL,
+                ville TEXT DEFAULT NULL,
+                eglise TEXT DEFAULT NULL,
+                participation TEXT DEFAULT NULL,
+                message TEXT DEFAULT NULL,
+                groupe_whatsapp TEXT DEFAULT NULL,
                 created_at DATETIME DEFAULT CURRENT_TIMESTAMP
             );"
         );
+
+        // Add columns if table already existed without them
+        try {
+            $pdo->exec("ALTER TABLE inscriptions ADD COLUMN groupe_whatsapp TEXT DEFAULT NULL;");
+        } catch (Throwable $e) {}
     } else {
         // MySQL table creation
         $pdo->exec(
             "CREATE TABLE IF NOT EXISTS `inscriptions` (
-                `id`            INT           AUTO_INCREMENT PRIMARY KEY,
-                `nom`           VARCHAR(100)  NOT NULL,
-                `prenom`        VARCHAR(100)  NOT NULL,
-                `email`         VARCHAR(191)  NOT NULL,
-                `telephone`     VARCHAR(30)   DEFAULT NULL,
-                `ville`         VARCHAR(100)  DEFAULT NULL,
-                `eglise`        VARCHAR(200)  DEFAULT NULL,
-                `participation` VARCHAR(80)   DEFAULT NULL,
-                `message`       TEXT          DEFAULT NULL,
-                `created_at`    DATETIME      NOT NULL DEFAULT CURRENT_TIMESTAMP,
+                `id`              INT           AUTO_INCREMENT PRIMARY KEY,
+                `nom`             VARCHAR(100)  NOT NULL,
+                `prenom`          VARCHAR(100)  NOT NULL,
+                `email`           VARCHAR(191)  DEFAULT NULL,
+                `telephone`       VARCHAR(30)   DEFAULT NULL,
+                `ville`           VARCHAR(100)  DEFAULT NULL,
+                `eglise`          VARCHAR(200)  DEFAULT NULL,
+                `participation`   VARCHAR(80)   DEFAULT NULL,
+                `message`         TEXT          DEFAULT NULL,
+                `groupe_whatsapp` TEXT          DEFAULT NULL,
+                `created_at`      DATETIME      NOT NULL DEFAULT CURRENT_TIMESTAMP,
                 INDEX idx_email (`email`),
                 INDEX idx_date  (`created_at`)
             ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;"
         );
+
+        try {
+            $pdo->exec("ALTER TABLE `inscriptions` ADD COLUMN `groupe_whatsapp` TEXT DEFAULT NULL;");
+        } catch (Throwable $e) {}
     }
 }
 
@@ -89,12 +100,13 @@ function ensureSQLiteTable(PDO $pdo): void {
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             nom TEXT NOT NULL,
             prenom TEXT NOT NULL,
-            email TEXT NOT NULL,
-            telephone TEXT,
-            ville TEXT,
-            eglise TEXT,
-            participation TEXT,
-            message TEXT,
+            email TEXT DEFAULT NULL,
+            telephone TEXT DEFAULT NULL,
+            ville TEXT DEFAULT NULL,
+            eglise TEXT DEFAULT NULL,
+            participation TEXT DEFAULT NULL,
+            message TEXT DEFAULT NULL,
+            groupe_whatsapp TEXT DEFAULT NULL,
             created_at DATETIME DEFAULT CURRENT_TIMESTAMP
         );"
     );
